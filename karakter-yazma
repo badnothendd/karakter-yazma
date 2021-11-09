@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+	
+	char veri[25]= "ne yazdiysam o kanks";
+	int uzunluk= strlen(veri);
+	int i;
+	
+	 FILE *filep= fopen("yazilimdeneme.txt", "w");
+	 
+	  if(filep==NULL) {
+	  	printf("dosya olusturulamadi");
+	  }
+	 else {
+	 	for(i=0; i<uzunluk; i++) {
+	 		fputc(veri[i], filep);
+	 		printf("yazilan karakter %c\n", veri[i]);
+		 }
+	 }
+	
+	return 0;
+}
